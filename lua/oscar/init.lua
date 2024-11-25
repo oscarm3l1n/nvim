@@ -1,2 +1,2 @@
-require("oscar.keymaps")
+require("oscar.remap")
 require("oscar.packer")
