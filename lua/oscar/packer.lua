@@ -14,12 +14,6 @@ return require('packer').startup(function(use)
   use({'hrsh7th/cmp-nvim-lsp'})
   use{'williamboman/mason.nvim'}
   use{'williamboman/mason-lspconfig.nvim'}
-  use({
-      "ramojus/mellifluous.nvim",
-      -- version = "v0.*", -- uncomment for stable config (some features might be missed if/when v1 comes out)
-      config = function()
-          require("mellifluous").setup({}) -- optional, see configuration section.
-          vim.cmd("colorscheme mellifluous")
-      end,
-  })
+  use{ "rose-pine/neovim", name = "rose-pine" }
+
 end)
