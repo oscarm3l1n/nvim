@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/oscar/.cache/nvim/packer_hererocks/2.1.1731601260/share/lua/5.1/?.lua;/Users/oscar/.cache/nvim/packer_hererocks/2.1.1731601260/share/lua/5.1/?/init.lua;/Users/oscar/.cache/nvim/packer_hererocks/2.1.1731601260/lib/luarocks/rocks-5.1/?.lua;/Users/oscar/.cache/nvim/packer_hererocks/2.1.1731601260/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/oscar/.cache/nvim/packer_hererocks/2.1.1731601260/lib/lua/5.1/?.so"
+local package_path_str = "/home/oscar/.cache/nvim/packer_hererocks/2.1.1713484068/share/lua/5.1/?.lua;/home/oscar/.cache/nvim/packer_hererocks/2.1.1713484068/share/lua/5.1/?/init.lua;/home/oscar/.cache/nvim/packer_hererocks/2.1.1713484068/lib/luarocks/rocks-5.1/?.lua;/home/oscar/.cache/nvim/packer_hererocks/2.1.1713484068/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/oscar/.cache/nvim/packer_hererocks/2.1.1713484068/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -76,62 +76,57 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/Users/oscar/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    path = "/home/oscar/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
-    path = "/Users/oscar/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    path = "/home/oscar/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
   ["mason.nvim"] = {
     loaded = true,
-    path = "/Users/oscar/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    path = "/home/oscar/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["mellifluous.nvim"] = {
-    config = { "\27LJ\2\nm\0\0\3\0\6\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\3\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0\28colorscheme mellifluous\bcmd\bvim\nsetup\16mellifluous\frequire\0" },
+  neovim = {
     loaded = true,
-    path = "/Users/oscar/.local/share/nvim/site/pack/packer/start/mellifluous.nvim",
-    url = "https://github.com/ramojus/mellifluous.nvim"
+    path = "/home/oscar/.local/share/nvim/site/pack/packer/start/neovim",
+    url = "https://github.com/rose-pine/neovim"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/Users/oscar/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    path = "/home/oscar/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/Users/oscar/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    path = "/home/oscar/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/Users/oscar/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    path = "/home/oscar/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/Users/oscar/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "/home/oscar/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/Users/oscar/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    path = "/home/oscar/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/Users/oscar/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    path = "/home/oscar/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: mellifluous.nvim
-time([[Config for mellifluous.nvim]], true)
-try_loadstring("\27LJ\2\nm\0\0\3\0\6\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\3\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0\28colorscheme mellifluous\bcmd\bvim\nsetup\16mellifluous\frequire\0", "config", "mellifluous.nvim")
-time([[Config for mellifluous.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
