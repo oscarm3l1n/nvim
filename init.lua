@@ -1,7 +1,5 @@
 require("oscar")
 
-require("oscar")
-
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
 vim.api.nvim_create_autocmd('TermOpen', {
