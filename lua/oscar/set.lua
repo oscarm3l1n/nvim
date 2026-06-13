@@ -30,3 +30,7 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
+
+-- Use plain vim for child processes (git commit, etc.) to avoid nested nvim issues.
+vim.env.EDITOR = "vim"
+vim.env.VISUAL = "vim"
