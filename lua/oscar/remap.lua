@@ -10,8 +10,14 @@ end, { desc = "Show diagnostic msgs in a floating window" })
 
 -- ─── Tabs  (<leader>b …) ───────────────────────────────────────────────────────
 
+for i = 1, 9 do
+    vim.keymap.set("n", "<leader>b" .. i, i .. "gt", { desc = "Go to tab " .. i })
+end
+
 vim.keymap.set("n", "<leader>bn", "<cmd>tabnext<cr>",     { desc = "Next tab" })
 vim.keymap.set("n", "<leader>bp", "<cmd>tabprevious<cr>", { desc = "Previous tab" })
+vim.keymap.set("n", "<leader>bc", "<cmd>tabnew<cr>",      { desc = "New tab" })
+vim.keymap.set("n", "<leader>bq", "<cmd>tabs<cr>",        { desc = "List all tabs" })
 
 -- ─── Windows  (<leader>bw …) ──────────────────────────────────────────────────
 
