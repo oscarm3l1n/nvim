@@ -22,6 +22,19 @@ vim.keymap.set("n", "<leader>bwl", "<c-w>l",       { desc = "Window right" })
 vim.keymap.set("n", "<leader>bws", "<c-w>s",       { desc = "Split window horizontally" })
 vim.keymap.set("n", "<leader>bwv", "<c-w>v",       { desc = "Split window vertically" })
 
+-- Toggle maximize current window
+local is_maximized = false
+vim.keymap.set("n", "<leader>bwm", function()
+    if is_maximized then
+        vim.cmd("wincmd =")
+        is_maximized = false
+    else
+        vim.cmd("wincmd |")
+        vim.cmd("wincmd _")
+        is_maximized = true
+    end
+end, { desc = "Toggle maximize window" })
+
 -- ─── Terminal  (<leader>vt / <leader>ht) ──────────────────────────────────────
 
 -- Exit terminal insert-mode with <Esc><Esc>
