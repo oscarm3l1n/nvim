@@ -8,38 +8,6 @@ vim.keymap.set("n", "<leader>e", function()
     vim.diagnostic.open_float(nil, { focusable = true })
 end, { desc = "Show diagnostic msgs in a floating window" })
 
--- ─── Tabs  (<leader>b …) ───────────────────────────────────────────────────────
-
-for i = 1, 9 do
-    vim.keymap.set("n", "<leader>b" .. i, i .. "gt", { desc = "Go to tab " .. i })
-end
-
-vim.keymap.set("n", "<leader>bn", "<cmd>tabnext<cr>",     { desc = "Next tab" })
-vim.keymap.set("n", "<leader>bp", "<cmd>tabprevious<cr>", { desc = "Previous tab" })
-vim.keymap.set("n", "<leader>bc", "<cmd>tabnew<cr>",      { desc = "New tab" })
-vim.keymap.set("n", "<leader>bq", "<cmd>tabs<cr>",        { desc = "List all tabs" })
-
--- ─── Windows  (<leader>bw …) ──────────────────────────────────────────────────
-
-vim.keymap.set("n", "<leader>bwk", "<c-w>k",       { desc = "Window up" })
-vim.keymap.set("n", "<leader>bwj", "<c-w>j",       { desc = "Window down" })
-vim.keymap.set("n", "<leader>bwh", "<c-w>h",       { desc = "Window left" })
-vim.keymap.set("n", "<leader>bwl", "<c-w>l",       { desc = "Window right" })
-vim.keymap.set("n", "<leader>bws", "<c-w>s",       { desc = "Split window horizontally" })
-vim.keymap.set("n", "<leader>bwv", "<c-w>v",       { desc = "Split window vertically" })
-
--- Toggle maximize current window
-local is_maximized = false
-vim.keymap.set("n", "<leader>bwm", function()
-    if is_maximized then
-        vim.cmd("wincmd =")
-        is_maximized = false
-    else
-        vim.cmd("wincmd |")
-        vim.cmd("wincmd _")
-        is_maximized = true
-    end
-end, { desc = "Toggle maximize window" })
 
 -- ─── Terminal  (<leader>vt / <leader>ht) ──────────────────────────────────────
 
@@ -74,3 +42,47 @@ vim.keymap.set("n", "<leader>ht", function()
     vim.api.nvim_win_set_height(0, 15)
     job_id = vim.bo.channel
 end, { desc = "Open horizontal terminal split" })
+
+vim.keymap.set("n", "<leader>f", function()
+    vim.cmd("write")
+    local file = vim.fn.expand("%:p")
+    local result = vim.fn.system({ "clang-format", "-i", file })
+    if vim.v.shell_error ~= 0 then
+        vim.notify("clang-format failed: " .. result, vim.log.levels.ERROR)
+    else
+        vim.cmd("edit!")
+    end
+end, { desc = "Format file with clang-format" })
+
+local build_buf = -1
+local build_job_id = 0
+
+vim.keymap.set("n", "<leader>b", function()
+    local alive = build_buf > 0
+        and vim.api.nvim_buf_is_valid(build_buf)
+        and vim.fn.jobwait({ build_job_id }, 0)[1] == -1  -- -1 = still running
+
+    if not alive then
+        vim.cmd("new")
+        vim.cmd.wincmd("J")
+        vim.api.nvim_win_set_height(0, 15)
+        build_job_id = vim.fn.termopen({ "cmd.exe" }, { cwd = vim.fn.getcwd() })
+        build_buf = vim.api.nvim_get_current_buf()
+    else
+        -- reuse: make sure the buffer is visible
+        local found = false
+        for _, w in ipairs(vim.api.nvim_list_wins()) do
+            if vim.api.nvim_win_get_buf(w) == build_buf then
+                found = true
+                break
+            end
+        end
+        if not found then
+            vim.cmd("botright split")
+            vim.api.nvim_win_set_height(0, 15)
+            vim.api.nvim_win_set_buf(0, build_buf)
+        end
+    end
+
+    vim.fn.chansend(build_job_id, "cls\r\nbuild.bat\r\n")
+end, { desc = "Build project" })

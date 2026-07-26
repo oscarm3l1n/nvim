@@ -1,5 +1,5 @@
 vim.opt.guicursor = ""
-vim.opt.mouse = ""
+-- vim.opt.mouse = ""
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -31,6 +31,8 @@ vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
 
--- Use plain vim for child processes (git commit, etc.) to avoid nested nvim issues.
-vim.env.EDITOR = "vim"
-vim.env.VISUAL = "vim"
+-- Use nvim for child processes (git commit, etc.); nvim-unception flattens any
+-- nested nvim invocation from inside a :terminal into a buffer in this host
+-- session instead of spawning a broken nested TUI.
+vim.env.EDITOR = "nvim"
+vim.env.VISUAL = "nvim"

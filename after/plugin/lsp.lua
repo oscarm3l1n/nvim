@@ -5,14 +5,10 @@
 -- Reserve a space in the gutter
 vim.opt.signcolumn = 'yes'
 
--- Add cmp_nvim_lsp capabilities settings to lspconfig
--- This should be executed before you configure any language server
-local lspconfig_defaults = require('lspconfig').util.default_config
-lspconfig_defaults.capabilities = vim.tbl_deep_extend(
-  'force',
-  lspconfig_defaults.capabilities,
-  require('cmp_nvim_lsp').default_capabilities()
-)
+-- Set cmp_nvim_lsp capabilities for all servers (replaces the old lspconfig defaults hack)
+vim.lsp.config('*', {
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+})
 
 -- This is where you enable features that only work
 -- if there is a language server active in the file
@@ -31,13 +27,20 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
     vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
     vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+    vim.keymap.set('n', '<bs>', function ()
+        vim.lsp.buf.execute_command({
+            command = 'clangd.switchSourceHeader',
+            arguments = { vim.uri_from_bufnr(0) }
+        })
+    end, opts)
+
   end,
 })
 
 -- You'll find a list of language servers here:
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
--- These are example language servers. 
-require'lspconfig'.pyright.setup({})
+-- nvim-lspconfig registers server configs via vim.lsp.config; vim.lsp.enable activates them
+vim.lsp.enable('pyright')
 
 local cmp = require('cmp')
 

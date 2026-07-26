@@ -1,0 +1,6 @@
+-- nvim-unception: when a command run inside a :terminal buffer (e.g. `git
+-- commit`, `git rebase -i`) tries to launch a nested nvim, this forwards that
+-- edit request to the host nvim session instead, so it opens as a normal,
+-- writable buffer. See lua/oscar/set.lua (EDITOR/VISUAL) and the global
+-- `core.editor` git config, which passes g:unception_block_while_host_edits=1
+-- so the terminal job blocks until the commit/rebase buffer is closed.
