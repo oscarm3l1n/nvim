@@ -31,6 +31,16 @@ vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
 
+-- Use PowerShell as the default shell for :terminal (and :!, :read, etc.)
+-- Only Windows PowerShell 5.1 is installed; swap "powershell" for "pwsh" if
+-- you install PowerShell 7 later.
+vim.o.shell = "powershell"
+vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
+vim.o.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
+vim.o.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+vim.o.shellquote = ""
+vim.o.shellxquote = ""
+
 -- Use nvim for child processes (git commit, etc.); nvim-unception flattens any
 -- nested nvim invocation from inside a :terminal into a buffer in this host
 -- session instead of spawning a broken nested TUI.

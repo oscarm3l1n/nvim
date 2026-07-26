@@ -114,6 +114,12 @@ _G.packer_plugins = {
     path = "C:\\Users\\oscar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-unception",
     url = "https://github.com/samjwill/nvim-unception"
   },
+  ["oil.nvim"] = {
+    config = { "\27LJ\2\n£\2\0\0\6\0\17\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0'\3\14\0'\4\15\0005\5\16\0B\0\5\1K\0\1\0\1\0\1\tdesc\20Open parent dir\17<CMD>Oil<CR>\6-\6n\bset\vkeymap\bvim\17view_options\1\0\1\16show_hidden\2\fkeymaps\1\0\2\n<M-h>\25actions.select_split\n<C-h>\1\fcolumns\1\0\3\fcolumns\0\17view_options\0\fkeymaps\0\1\2\0\0\ticon\nsetup\boil\frequire\0" },
+    loaded = true,
+    path = "C:\\Users\\oscar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\oil.nvim",
+    url = "https://github.com/stevearc/oil.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "C:\\Users\\oscar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
@@ -132,6 +138,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: oil.nvim
+time([[Config for oil.nvim]], true)
+try_loadstring("\27LJ\2\n£\2\0\0\6\0\17\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0'\3\14\0'\4\15\0005\5\16\0B\0\5\1K\0\1\0\1\0\1\tdesc\20Open parent dir\17<CMD>Oil<CR>\6-\6n\bset\vkeymap\bvim\17view_options\1\0\1\16show_hidden\2\fkeymaps\1\0\2\n<M-h>\25actions.select_split\n<C-h>\1\fcolumns\1\0\3\fcolumns\0\17view_options\0\fkeymaps\0\1\2\0\0\ticon\nsetup\boil\frequire\0", "config", "oil.nvim")
+time([[Config for oil.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
