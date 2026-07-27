@@ -4,7 +4,6 @@ require('nvim-treesitter').setup()
 
 -- Auto-install parsers for these languages on first open
 local ensure_installed = {
-  "python", "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline"
 }
 
 vim.api.nvim_create_autocmd('FileType', {
