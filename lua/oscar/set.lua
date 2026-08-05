@@ -31,13 +31,15 @@ vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
 
--- Use PowerShell as the default shell for :terminal (and :!, :read, etc.)
--- Only Windows PowerShell 5.1 is installed; swap "powershell" for "pwsh" if
--- you install PowerShell 7 later.
-vim.o.shell = "powershell"
-vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
-vim.o.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
-vim.o.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+-- Use Git Bash as the default shell for :terminal (and :!, :read, etc.)
+-- Prepend Git's bin dir to PATH so plain "bash" resolves without needing the
+-- full "C:/Program Files/..." path (which nvim's shell option can't handle
+-- due to the space, even when escaped).
+vim.env.PATH = "C:\\Program Files\\Git\\bin;" .. vim.env.PATH
+vim.o.shell = "bash"
+vim.o.shellcmdflag = "-c"
+vim.o.shellredir = "> %s 2>&1"
+vim.o.shellpipe = "2>&1 | tee %s"
 vim.o.shellquote = ""
 vim.o.shellxquote = ""
 
