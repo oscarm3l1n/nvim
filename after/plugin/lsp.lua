@@ -41,6 +41,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 -- nvim-lspconfig registers server configs via vim.lsp.config; vim.lsp.enable activates them
 vim.lsp.enable('pyright')
+vim.lsp.enable('clangd')
 
 local cmp = require('cmp')
 
