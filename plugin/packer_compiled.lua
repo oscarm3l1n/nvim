@@ -79,6 +79,12 @@ _G.packer_plugins = {
     path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["flatten.nvim"] = {
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\fflatten\frequire\0" },
+    loaded = true,
+    path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\flatten.nvim",
+    url = "https://github.com/willothy/flatten.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason-lspconfig.nvim",
@@ -109,13 +115,8 @@ _G.packer_plugins = {
     path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
-  ["nvim-unception"] = {
-    loaded = true,
-    path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-unception",
-    url = "https://github.com/samjwill/nvim-unception"
-  },
   ["oil.nvim"] = {
-    config = { "\27LJ\2\n£\2\0\0\6\0\17\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0'\3\14\0'\4\15\0005\5\16\0B\0\5\1K\0\1\0\1\0\1\tdesc\20Open parent dir\17<CMD>Oil<CR>\6-\6n\bset\vkeymap\bvim\17view_options\1\0\1\16show_hidden\2\fkeymaps\1\0\2\n<C-h>\1\n<M-h>\25actions.select_split\fcolumns\1\0\3\17view_options\0\fkeymaps\0\fcolumns\0\1\2\0\0\ticon\nsetup\boil\frequire\0" },
+    config = { "\27LJ\2\n£\2\0\0\6\0\17\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0'\3\14\0'\4\15\0005\5\16\0B\0\5\1K\0\1\0\1\0\1\tdesc\20Open parent dir\17<CMD>Oil<CR>\6-\6n\bset\vkeymap\bvim\17view_options\1\0\1\16show_hidden\2\fkeymaps\1\0\2\n<C-h>\1\n<M-h>\25actions.select_split\fcolumns\1\0\3\17view_options\0\fcolumns\0\fkeymaps\0\1\2\0\0\ticon\nsetup\boil\frequire\0" },
     loaded = true,
     path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\oil.nvim",
     url = "https://github.com/stevearc/oil.nvim"
@@ -134,14 +135,28 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["term-edit.nvim"] = {
+    config = { "\27LJ\2\nM\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\15prompt_end\b%$ \nsetup\14term-edit\frequire\0" },
+    loaded = true,
+    path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\term-edit.nvim",
+    url = "https://github.com/chomosuke/term-edit.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: flatten.nvim
+time([[Config for flatten.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\fflatten\frequire\0", "config", "flatten.nvim")
+time([[Config for flatten.nvim]], false)
 -- Config for: oil.nvim
 time([[Config for oil.nvim]], true)
-try_loadstring("\27LJ\2\n£\2\0\0\6\0\17\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0'\3\14\0'\4\15\0005\5\16\0B\0\5\1K\0\1\0\1\0\1\tdesc\20Open parent dir\17<CMD>Oil<CR>\6-\6n\bset\vkeymap\bvim\17view_options\1\0\1\16show_hidden\2\fkeymaps\1\0\2\n<C-h>\1\n<M-h>\25actions.select_split\fcolumns\1\0\3\17view_options\0\fkeymaps\0\fcolumns\0\1\2\0\0\ticon\nsetup\boil\frequire\0", "config", "oil.nvim")
+try_loadstring("\27LJ\2\n£\2\0\0\6\0\17\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0'\3\14\0'\4\15\0005\5\16\0B\0\5\1K\0\1\0\1\0\1\tdesc\20Open parent dir\17<CMD>Oil<CR>\6-\6n\bset\vkeymap\bvim\17view_options\1\0\1\16show_hidden\2\fkeymaps\1\0\2\n<C-h>\1\n<M-h>\25actions.select_split\fcolumns\1\0\3\17view_options\0\fcolumns\0\fkeymaps\0\1\2\0\0\ticon\nsetup\boil\frequire\0", "config", "oil.nvim")
 time([[Config for oil.nvim]], false)
+-- Config for: term-edit.nvim
+time([[Config for term-edit.nvim]], true)
+try_loadstring("\27LJ\2\nM\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\15prompt_end\b%$ \nsetup\14term-edit\frequire\0", "config", "term-edit.nvim")
+time([[Config for term-edit.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

@@ -3,6 +3,32 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+
+  -- Load flatten.nvim first and eagerly (no cmd/event/module triggers below)
+  -- so it's ready before any other plugin might spawn a nested nvim.
+  use({
+    "willothy/flatten.nvim",
+    config = function()
+      require("flatten").setup {
+        -- defaults already block for gitcommit/gitrebase; nothing else needed
+      }
+    end,
+  })
+
+  -- Lets you use normal-mode vim bindings (i, a, dd, cw, p, x, r, ...) to
+  -- edit the shell command you're typing inside a :terminal buffer, instead
+  -- of being stuck sending every keystroke straight to the shell. Requires
+  -- prompt_end to match the tail of the shell prompt -- see the $NVIM check
+  -- in ~/.bashrc that swaps to a plain "$ " prompt for this to match reliably.
+  use({
+    "chomosuke/term-edit.nvim",
+    config = function()
+      require("term-edit").setup {
+        prompt_end = "%$ ",
+      }
+    end,
+  })
+
   use{ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use {
 	  'nvim-telescope/telescope.nvim', branch = 'master',
@@ -14,7 +40,6 @@ return require('packer').startup(function(use)
   use{'williamboman/mason.nvim'}
   use{'williamboman/mason-lspconfig.nvim'}
   use "EdenEast/nightfox.nvim"
-  use "samjwill/nvim-unception"
 
   use({
     "stevearc/oil.nvim",

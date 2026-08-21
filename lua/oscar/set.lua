@@ -43,7 +43,7 @@ vim.o.shellpipe = "2>&1 | tee %s"
 vim.o.shellquote = ""
 vim.o.shellxquote = ""
 
--- Use nvim for child processes (git commit, etc.); nvim-unception flattens any
+-- Use nvim for child processes (git commit, etc.); flatten.nvim flattens any
 -- nested nvim invocation from inside a :terminal into a buffer in this host
 -- session instead of spawning a broken nested TUI.
 vim.env.EDITOR = "nvim"

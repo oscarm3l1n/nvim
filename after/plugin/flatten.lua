@@ -1,0 +1,7 @@
+-- flatten.nvim: when a command run inside a :terminal buffer (e.g. `git
+-- commit`, `git rebase -i`) tries to launch a nested nvim, this forwards that
+-- edit request to the host nvim session instead, so it opens as a normal,
+-- writable buffer with full normal-mode editing (no more being stuck in
+-- Terminal-Job mode). See lua/oscar/set.lua (EDITOR/VISUAL) and
+-- lua/oscar/packer.lua (setup call). gitcommit/gitrebase block the terminal
+-- job by default until you close the buffer -- no extra git config needed.
