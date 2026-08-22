@@ -82,5 +82,5 @@ vim.keymap.set("n", "<leader>b", function()
         end
     end
 
-    vim.fn.chansend(build_job_id, "cls\r\nbuild.bat\r\n")
+    vim.fn.chansend(build_job_id, "cls\r\ncmake --build build-vs --config Debug --target run\r\n")
 end, { desc = "Build project" })

@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "C:\\Users\\omel\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1774638290\\share\\lua\\5.1\\?.lua;C:\\Users\\omel\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1774638290\\share\\lua\\5.1\\?\\init.lua;C:\\Users\\omel\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1774638290\\lib\\luarocks\\rocks-5.1\\?.lua;C:\\Users\\omel\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1774638290\\lib\\luarocks\\rocks-5.1\\?\\init.lua"
-local install_cpath_pattern = "C:\\Users\\omel\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1774638290\\lib\\lua\\5.1\\?.so"
+local package_path_str = "C:\\Users\\oscar\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1774638290\\share\\lua\\5.1\\?.lua;C:\\Users\\oscar\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1774638290\\share\\lua\\5.1\\?\\init.lua;C:\\Users\\oscar\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1774638290\\lib\\luarocks\\rocks-5.1\\?.lua;C:\\Users\\oscar\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1774638290\\lib\\luarocks\\rocks-5.1\\?\\init.lua"
+local install_cpath_pattern = "C:\\Users\\oscar\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1774638290\\lib\\lua\\5.1\\?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -76,87 +76,87 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp",
+    path = "C:\\Users\\oscar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["flatten.nvim"] = {
     config = { "\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\fflatten\frequire\0" },
     loaded = true,
-    path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\flatten.nvim",
+    path = "C:\\Users\\oscar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\flatten.nvim",
     url = "https://github.com/willothy/flatten.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason-lspconfig.nvim",
+    path = "C:\\Users\\oscar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
   ["mason.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
+    path = "C:\\Users\\oscar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
   ["nightfox.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nightfox.nvim",
+    path = "C:\\Users\\oscar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nightfox.nvim",
     url = "https://github.com/EdenEast/nightfox.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
+    path = "C:\\Users\\oscar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
+    path = "C:\\Users\\oscar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
+    path = "C:\\Users\\oscar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["oil.nvim"] = {
-    config = { "\27LJ\2\n£\2\0\0\6\0\17\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0'\3\14\0'\4\15\0005\5\16\0B\0\5\1K\0\1\0\1\0\1\tdesc\20Open parent dir\17<CMD>Oil<CR>\6-\6n\bset\vkeymap\bvim\17view_options\1\0\1\16show_hidden\2\fkeymaps\1\0\2\n<C-h>\1\n<M-h>\25actions.select_split\fcolumns\1\0\3\17view_options\0\fcolumns\0\fkeymaps\0\1\2\0\0\ticon\nsetup\boil\frequire\0" },
+    config = { "\27LJ\2\n£\2\0\0\6\0\17\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0'\3\14\0'\4\15\0005\5\16\0B\0\5\1K\0\1\0\1\0\1\tdesc\20Open parent dir\17<CMD>Oil<CR>\6-\6n\bset\vkeymap\bvim\17view_options\1\0\1\16show_hidden\2\fkeymaps\1\0\2\n<M-h>\25actions.select_split\n<C-h>\1\fcolumns\1\0\3\fkeymaps\0\17view_options\0\fcolumns\0\1\2\0\0\ticon\nsetup\boil\frequire\0" },
     loaded = true,
-    path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\oil.nvim",
+    path = "C:\\Users\\oscar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\oil.nvim",
     url = "https://github.com/stevearc/oil.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
+    path = "C:\\Users\\oscar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
+    path = "C:\\Users\\oscar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
+    path = "C:\\Users\\oscar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["term-edit.nvim"] = {
     config = { "\27LJ\2\nM\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\15prompt_end\b%$ \nsetup\14term-edit\frequire\0" },
     loaded = true,
-    path = "C:\\Users\\omel\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\term-edit.nvim",
+    path = "C:\\Users\\oscar\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\term-edit.nvim",
     url = "https://github.com/chomosuke/term-edit.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: term-edit.nvim
+time([[Config for term-edit.nvim]], true)
+try_loadstring("\27LJ\2\nM\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\15prompt_end\b%$ \nsetup\14term-edit\frequire\0", "config", "term-edit.nvim")
+time([[Config for term-edit.nvim]], false)
 -- Config for: flatten.nvim
 time([[Config for flatten.nvim]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\fflatten\frequire\0", "config", "flatten.nvim")
 time([[Config for flatten.nvim]], false)
 -- Config for: oil.nvim
 time([[Config for oil.nvim]], true)
-try_loadstring("\27LJ\2\n£\2\0\0\6\0\17\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0'\3\14\0'\4\15\0005\5\16\0B\0\5\1K\0\1\0\1\0\1\tdesc\20Open parent dir\17<CMD>Oil<CR>\6-\6n\bset\vkeymap\bvim\17view_options\1\0\1\16show_hidden\2\fkeymaps\1\0\2\n<C-h>\1\n<M-h>\25actions.select_split\fcolumns\1\0\3\17view_options\0\fcolumns\0\fkeymaps\0\1\2\0\0\ticon\nsetup\boil\frequire\0", "config", "oil.nvim")
+try_loadstring("\27LJ\2\n£\2\0\0\6\0\17\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\0016\0\n\0009\0\v\0009\0\f\0'\2\r\0'\3\14\0'\4\15\0005\5\16\0B\0\5\1K\0\1\0\1\0\1\tdesc\20Open parent dir\17<CMD>Oil<CR>\6-\6n\bset\vkeymap\bvim\17view_options\1\0\1\16show_hidden\2\fkeymaps\1\0\2\n<M-h>\25actions.select_split\n<C-h>\1\fcolumns\1\0\3\fkeymaps\0\17view_options\0\fcolumns\0\1\2\0\0\ticon\nsetup\boil\frequire\0", "config", "oil.nvim")
 time([[Config for oil.nvim]], false)
--- Config for: term-edit.nvim
-time([[Config for term-edit.nvim]], true)
-try_loadstring("\27LJ\2\nM\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\15prompt_end\b%$ \nsetup\14term-edit\frequire\0", "config", "term-edit.nvim")
-time([[Config for term-edit.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
