@@ -64,7 +64,7 @@ vim.keymap.set("n", "<leader>b", function()
         vim.cmd("new")
         vim.cmd.wincmd("J")
         vim.api.nvim_win_set_height(0, 15)
-        build_job_id = vim.fn.termopen({ "cmd.exe" }, { cwd = vim.fn.getcwd() })
+        build_job_id = vim.fn.termopen({ "bash" }, { cwd = vim.fn.getcwd() })
         build_buf = vim.api.nvim_get_current_buf()
     else
         -- reuse: make sure the buffer is visible
@@ -82,5 +82,14 @@ vim.keymap.set("n", "<leader>b", function()
         end
     end
 
-    vim.fn.chansend(build_job_id, "cls\r\ncmake --build build --config Debug --target run\r\n")
+    local cmd = table.concat({
+        "\r\nclear",
+        "cd build/win32_x64",
+        "cmake --build . --config Release",
+        "cd ../..",
+        "build/win32_x64/Minecraft/Minecraft.Windows/Release/Minecraft.Windows.exe\r\n"
+    }, " && ")
+
+    -- will only work if i have alias 'pybuild'
+    vim.fn.chansend(build_job_id, cmd)
 end, { desc = "Build project" })

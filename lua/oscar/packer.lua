@@ -10,7 +10,12 @@ return require('packer').startup(function(use)
     "willothy/flatten.nvim",
     config = function()
       require("flatten").setup {
-        -- defaults already block for gitcommit/gitrebase; nothing else needed
+        -- defaults already block for gitcommit/gitrebase; but the default
+        -- window.open = "current" reuses whatever window you're in, so
+        -- finishing with :wq closes that window -- if it was the only one,
+        -- that quits nvim entirely. Force a vsplit so a window is always
+        -- left behind.
+        window = { open = "vsplit" },
       }
     end,
   })
